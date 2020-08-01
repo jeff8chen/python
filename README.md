@@ -1,4 +1,6 @@
 # python
-runnng the program
-'python find_meteor.py'
-it is about new version of readme in the readme branch.
+it lists a set of python programs:
+##1 find_meteors.py: simple program to list top 10 closest meteors.
+
+##2 igpay.py: a short program to do word game based upon the first letter.
+ 
