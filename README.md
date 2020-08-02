@@ -6,4 +6,5 @@ it lists a set of python programs:
 ##2 igpay.py: a short program to do word game based upon the first letter.
 
 ##3 havesine.py
- 
+
+##4 basics.py
