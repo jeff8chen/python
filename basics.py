@@ -50,35 +50,6 @@ alist.append('xyz')
 new_element =alist.pop()
 print(f"new element:{new_element}")
 
-#list comprehesnion
-alist =[value*2 for value in range(1,30) if value%2==0]
-temp_str=""
-for a in alist:
-    if temp_str =="":
-        temp_str=str(a)
-    else:
-        temp_str = temp_str + ", " + str(a)
-print("list comprehesion: " + temp_str)
-list_copy= alist[:]
-print(list_copy)
-
-
-#string, list operators:
-print("la"*5 + "robin")
-
-colors =['red', 'blue', 'green', 'orange', 'purple']
-print(colors[0:3])
-print(colors[::2])
-print(colors[-3:-1])
-
-my_str="the brown fox jumped over the lazy dog";
-print(my_str[0:6])
-print(my_str[::3])
-print(my_str[-9:-1:2])
-
-', '.join(colors)
-'a b c'.split(' ')
-
 
 #range and tuple:
 d=range(1,8)
@@ -108,6 +79,46 @@ for value in favourite_lang.values():
     print(value)
 for k, v in favourite_lang.items():
    print(f"{k}:{v},")
+
+
+#list comprehesnion
+alist =[value*2 for value in range(1,30) if value%2==0]
+temp_str=""
+for a in alist:
+    if temp_str =="":
+        temp_str=str(a)
+    else:
+        temp_str = temp_str + ", " + str(a)
+print("list comprehesion: " + temp_str)
+list_copy= alist[:]
+print(list_copy)
+
+
+#string, list operators:
+print("la"*5 + "robin")
+
+colors =['red', 'blue', 'green', 'orange', 'purple']
+print(colors[0:3])
+print(colors[::2])
+print(colors[-3:-1])
+
+my_str="the brown fox jumped over the lazy dog";
+print(my_str[0:6])
+print(my_str[::3])
+print(my_str[-9:-1:2])
+
+', '.join(colors)
+'a b c'.split(' ')
+
+#other operation functions:
+#enumerate a list
+for (i,c) in enumerate(colors):
+    print(f"{i}:{c}")
+
+#zip two lists:
+fruits =['apple', 'grape', 'banana', 'orange']
+for (c,f) in zip(colors, fruits):
+    print(f"{c} {f}")
 
 
  #functions
@@ -159,3 +170,31 @@ def build_profile(**user_profile):
 
 my_profile = build_profile(firstname="john", lastname="Smith", location="Philadelphia", state="PA")
 print(my_profile)
+
+#add error handling
+
+def make_pizza2(size, *topping):
+    try:
+        print(f"pizza size: {size} inches")
+        print("toppings:")
+        for t in topping:
+            print("\t" + t)
+
+    except:
+        print(f"exception occurred.")
+    finally:
+        print(f"finished making the pizza.")
+
+make_pizza2(12, "pepperoni", "ham")
+
+def order_pizza():
+    try:
+        print("starting order.")
+        make_pizza2()
+        print("finished order")
+    except TypeError as te:
+        print(f"Exception due to TypeError: {te}")
+    except Exception as e:
+        print(f"all other exception: {e}")
+     
+order_pizza()
